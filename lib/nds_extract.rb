@@ -90,9 +90,12 @@ def movies_with_directors_set(source)
   movies_by_director = []
   while index < source.length do 
     director_info = source[index]
-    director_name = director_info[:name]
+    directors_name = director_info[:name]
     directors_movies = director_info[:movies]
     movies_by_director << movies_with_directors_set(director_name, directors_movies)
+    index += 1 
+  end 
+  movies_by_director
   # GOAL: For each director, find their :movies Array and stick it in a new Array
   #
   # INPUT:
